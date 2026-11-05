@@ -6,5 +6,6 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 public class AutoOp {
     Eyes camera;
     Drivetrain auto_train;
+    Ball_system autoballer;
 
 }

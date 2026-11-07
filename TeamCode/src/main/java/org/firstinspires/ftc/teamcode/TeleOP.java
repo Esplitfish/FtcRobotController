@@ -3,7 +3,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 @TeleOp
-public class TeleOP extends OpMode{
+public class TeleOP extends OpMode {
     Drivetrain main_train;
     Ball_system ball_ystem;
     @Override

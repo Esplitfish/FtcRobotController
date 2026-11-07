@@ -25,7 +25,7 @@ public class Drivetrain {
         powers[3] = y + x + r;
     }
     public void apply_powers(){
-        for (byte i = 0; i <= 4; i++){
+        for (byte i = 0; i < 4; i++){
             motors[i].setPower(powers[i]);
         }
     }

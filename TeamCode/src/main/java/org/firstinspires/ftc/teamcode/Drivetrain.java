@@ -16,13 +16,13 @@ public class Drivetrain {
     public void accept_input(Gamepad gp){
         double x, y, r;
         // Is not headless
-        x = gp.left_stick_x; // Left stick x-axis (strafe)
-        y = gp.left_stick_y; // Left stick y-axis (forward/backward)
-        r = gp.right_stick_x; // Right stick x-axis (turning)
-        powers[0] = y - x - r;
-        powers[1] = y + x - r;
-        powers[2] = y - x + r;
-        powers[3] = y + x + r;
+        x = gp.left_stick_x;
+        y = -gp.left_stick_y;
+        r = gp.right_stick_x;
+        powers[0] = y + x - r; // BR
+        powers[1] = y - x - r; // FR
+        powers[2] = y - x + r; // BL
+        powers[3] = y + x + r; // FL
     }
     public void accept_input(double[] np){
         for (byte i = 0; i < 4; i++){

@@ -13,7 +13,7 @@ public class Drivetrain {
         motors[2] = hm.get(DcMotorEx.class, "Back Left Motor");
         motors[3] = hm.get(DcMotorEx.class, "Front Left Motor");
     }
-    public void accept_input_gamepad(Gamepad gp){
+    public void accept_input(Gamepad gp){
         double x, y, r;
         // Is not headless
         x = gp.left_stick_x; // Left stick x-axis (strafe)
@@ -23,6 +23,11 @@ public class Drivetrain {
         powers[1] = y + x - r;
         powers[2] = y - x + r;
         powers[3] = y + x + r;
+    }
+    public void accept_input(double[] np){
+        for (byte i = 0; i < 4; i++){
+            powers[i] = np[i];
+        }
     }
     public void apply_powers(){
         for (byte i = 0; i < 4; i++){

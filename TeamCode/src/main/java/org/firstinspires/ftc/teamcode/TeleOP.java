@@ -13,7 +13,7 @@ public class TeleOP extends OpMode {
     }
     @Override
     public void loop(){
-        main_train.accept_input_gamepad(gamepad1);
+        main_train.accept_input(gamepad1);
         main_train.apply_powers();
         //ball_ystem.accept_input_gamepad(gamepad1);
         //ball_ystem.apply_powers();

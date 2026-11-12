@@ -17,10 +17,10 @@ public class Drivetrain {
         double x, y, r;
         // Is not headless
         x = gp.left_stick_x;
-        y = -gp.left_stick_y;
-        r = gp.right_stick_x;
-        powers[0] = y + x - r; // BR
-        powers[1] = y - x - r; // FR
+        y = gp.right_stick_x;
+        r = -gp.left_stick_y;
+        powers[0] = y - x - r; // BR
+        powers[1] = y + x - r; // FR
         powers[2] = y - x + r; // BL
         powers[3] = y + x + r; // FL
     }

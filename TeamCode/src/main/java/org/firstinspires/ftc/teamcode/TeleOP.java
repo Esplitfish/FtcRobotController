@@ -8,7 +8,7 @@ public class TeleOP extends OpMode {
     Ball_system ball_ystem;
     @Override
     public void init(){
-        main_train = new Drivetrain(hardwareMap, 0.1);
+        main_train = new Drivetrain(hardwareMap);
         ball_ystem = new Ball_system(hardwareMap);
     }
     @Override

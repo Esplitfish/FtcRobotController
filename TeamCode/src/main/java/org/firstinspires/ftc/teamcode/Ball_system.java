@@ -10,11 +10,13 @@ public class Ball_system {
     Ball_system(HardwareMap hm){
         motors[0] = hm.get(DcMotorEx.class, "Collector motor");
         motors[1] = hm.get(DcMotorEx.class, "Launcher motor");
-        motors[1].setDirection(DcMotorSimple.Direction.REVERSE);
+        motors[0].setDirection(DcMotorEx.Direction.REVERSE);
+        //motors[1].setDirection(DcMotorEx.Direction.REVERSE);
     }
     public void accept_input_gamepad(Gamepad gp){
         powers[0] = gp.left_trigger; // Collector
         powers[1] = gp.right_trigger; // Launcher
+        if (gp.right_bumper) powers[1] = -1.0;
     }
     public void apply_powers(){
         motors[0].setPower(powers[0]);

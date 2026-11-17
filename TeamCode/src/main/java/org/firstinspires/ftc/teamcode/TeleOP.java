@@ -7,10 +7,15 @@ public class TeleOP extends OpMode {
     Drivetrain main_train;
     Ball_system ball_ystem;
     boolean headed = true;
+    double xOffset=0;
+    double yOffset=0;
     @Override
     public void init(){
         main_train = new Drivetrain(hardwareMap);
         ball_ystem = new Ball_system(hardwareMap);
+        main_train.setOffsets(xOffset, yOffset);
+        main_train.odometer.recalibrateIMU();
+        main_train.odometer.resetPosAndIMU();
     }
     @Override
     public void loop(){

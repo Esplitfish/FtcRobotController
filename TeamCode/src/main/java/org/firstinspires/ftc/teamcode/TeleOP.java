@@ -6,6 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 public class TeleOP extends OpMode {
     Drivetrain main_train;
     Ball_system ball_ystem;
+    boolean headed = true;
     @Override
     public void init(){
         main_train = new Drivetrain(hardwareMap);
@@ -13,7 +14,8 @@ public class TeleOP extends OpMode {
     }
     @Override
     public void loop(){
-        main_train.accept_input(gamepad1);
+        if (gamepad1.aWasPressed())headed=!headed;
+        main_train.accept_input(gamepad1, headed);
         main_train.apply_powers();
         ball_ystem.accept_input_gamepad(gamepad1);
         ball_ystem.apply_powers();

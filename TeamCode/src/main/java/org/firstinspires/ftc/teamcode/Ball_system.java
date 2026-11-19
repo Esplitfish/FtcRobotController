@@ -22,6 +22,8 @@ public class Ball_system {
         powers[0] = gp.left_trigger; // Collector
         powers[1] = gp.right_trigger; // Launcher
         if (gp.right_bumper) powers[1] = -1.0;
+        if (gp.yWasPressed()) launch_loader.setPosition(0.5);
+        if (gp.yWasReleased()) launch_loader.setPosition(0.0);
     }
     public void apply_powers(){
         motors[0].setPower(powers[0]);

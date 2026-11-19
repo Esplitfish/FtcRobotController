@@ -1,13 +1,10 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.hardware.gobilda.GoBildaPinpointDriver;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
-import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
+
 public class Drivetrain {
-    GoBildaPinpointDriver odometer;
-    DistanceUnit mm;
     DcMotorEx[] motors = new DcMotorEx[4];
     double[] powers = new double[4];
     Drivetrain(HardwareMap hm){
@@ -15,15 +12,7 @@ public class Drivetrain {
         motors[1] = hm.get(DcMotorEx.class, "Front Right Motor");
         motors[2] = hm.get(DcMotorEx.class, "Back Left Motor");
         motors[3] = hm.get(DcMotorEx.class, "Front Left Motor");
-        odometer = hm.get(GoBildaPinpointDriver.class, "positionfinderidk");
     }
-
-
-
-    public void setOffsets(double xOffset, double yOffset){
-    odometer.setOffsets(xOffset, yOffset,mm);
-    }
-
     public void accept_input(Gamepad gp, boolean headed){
         double x, y, r;
 
